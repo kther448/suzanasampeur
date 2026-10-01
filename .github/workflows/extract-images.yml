@@ -1,0 +1,50 @@
+name: Extract Suzana image assets
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'suzana-sampeur-premium-image-assets.zip'
+
+permissions:
+  contents: write
+
+jobs:
+  extract-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract image assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .image-extract
+          mkdir -p .image-extract assets/images
+          unzip -o suzana-sampeur-premium-image-assets.zip -d .image-extract
+
+          find .image-extract -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) -print0 |
+          while IFS= read -r -d '' file; do
+            cp -f "$file" "assets/images/$(basename "$file")"
+          done
+
+          rm -rf .image-extract
+
+          echo "Images installed:"
+          find assets/images -maxdepth 1 -type f -print | sort
+
+      - name: Commit extracted images
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/images
+          if git diff --cached --quiet; then
+            echo "No image changes to commit."
+            exit 0
+          fi
+          git commit -m "Install Suzana website image assets"
+          git push
