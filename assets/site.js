@@ -1,12 +1,1 @@
-(() => {
-  const btn=document.querySelector('.mobile-toggle');
-  const nav=document.querySelector('.nav');
-  if(btn&&nav){
-    btn.addEventListener('click',()=>{
-      const open=nav.classList.toggle('open');
-      document.body.classList.toggle('menu-open',open);
-      btn.setAttribute('aria-expanded',String(open));
-    });
-  }
-  document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
-})();
+(()=>{const b=document.querySelector('.menu'),n=document.querySelector('.nav');if(b&&n)b.addEventListener('click',()=>{const o=n.classList.toggle('open');document.body.style.overflow=o?'hidden':'';b.setAttribute('aria-expanded',String(o))});document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear())})();
