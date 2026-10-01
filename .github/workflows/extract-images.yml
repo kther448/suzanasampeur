@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'suzana-sampeur-premium-image-assets.zip'
+      - '.github/workflows/extract-images.yml'
 
 permissions:
   contents: write
