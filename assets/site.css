@@ -211,7 +211,8 @@ button { color: inherit; }
 }
 .text-link::after { content: '↗'; font-size: .9rem; }
 .hero-photo { position: relative; min-height: 100svh; overflow: hidden; }
-.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 19%; }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+.hero-photo img, .story-image img, .editorial-grid img, .editorial-community img, .lifestyle-card img { image-rendering: auto; }
 .hero-photo::after {
   content: '';
   position: absolute;
@@ -291,11 +292,40 @@ button { color: inherit; }
 .service-card p { margin: 0; color: var(--muted); font-size: .91rem; }
 .service-card .arrow { font-size: 1.35rem; }
 
-.transactions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
-.transaction-card { position: relative; background: #0f0f0d; overflow: hidden; min-height: 540px; }
-.transaction-card img { width: 100%; height: 100%; min-height: 540px; object-fit: cover; transition: transform .65s cubic-bezier(.2,.65,.2,1); }
-.transaction-card:hover img { transform: scale(1.025); }
-.transaction-label { position: absolute; left: 18px; top: 18px; background: rgba(17,17,15,.9); color:#fff; padding: 8px 11px; text-transform: uppercase; letter-spacing: .13em; font-size: .63rem; }
+.transactions-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 22px;
+}
+.transaction-card {
+  position: relative;
+  background: #0f0f0d;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  grid-column: span 3;
+  border: 1px solid rgba(255,255,255,.11);
+}
+.transaction-card:nth-child(-n+3) { grid-column: span 2; }
+.transaction-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #0f0f0d;
+  transition: transform .65s cubic-bezier(.2,.65,.2,1);
+}
+.transaction-card:hover img { transform: scale(1.012); }
+.transaction-label {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  background: rgba(17,17,15,.88);
+  color:#fff;
+  padding: 8px 11px;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  font-size: .61rem;
+  backdrop-filter: blur(9px);
+}
 .transactions-foot { display:flex; justify-content:space-between; gap:24px; align-items:center; margin-top:34px; color:rgba(255,255,255,.68); font-size:.84rem; }
 
 .editorial-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 22px; }
@@ -314,6 +344,61 @@ button { color: inherit; }
 .timeline-year { font-family: var(--serif); font-size: 2.2rem; color: var(--sand); }
 .timeline-item h3 { font-family: var(--serif); font-weight: 500; font-size: 1.35rem; margin: 18px 0 8px; }
 .timeline-item p { color: rgba(255,255,255,.6); font-size: .88rem; margin: 0; }
+
+
+.lifestyle-section { background: #ece6dc; }
+.lifestyle-grid {
+  display: grid;
+  grid-template-columns: 1.12fr .88fr;
+  gap: 24px;
+  align-items: stretch;
+}
+.lifestyle-card {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 680px;
+  background: #181714;
+}
+.lifestyle-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 680px;
+  object-fit: cover;
+  object-position: center 34%;
+  transition: transform .8s cubic-bezier(.2,.65,.2,1);
+}
+.lifestyle-card-wide img { object-position: center 40%; }
+.lifestyle-card:hover img { transform: scale(1.015); }
+.lifestyle-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,.7), transparent 42%);
+  pointer-events: none;
+}
+.lifestyle-card figcaption {
+  position: absolute;
+  z-index: 2;
+  inset: auto 0 0 0;
+  color: #fff;
+  padding: 32px 30px 28px;
+}
+.lifestyle-card strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(1.45rem, 2.2vw, 2.15rem);
+  font-weight: 500;
+  line-height: 1.05;
+  margin-bottom: 8px;
+}
+.lifestyle-card span {
+  display: block;
+  font-size: .69rem;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  opacity: .74;
+}
 
 .contact-wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(42px, 8vw, 110px); align-items: start; }
 .contact-title { font-family: var(--serif); font-weight: 500; font-size: clamp(3rem, 5vw, 5.5rem); line-height: .96; margin: 16px 0 24px; }
@@ -399,7 +484,10 @@ footer { background: #0d0d0c; color: #fff; padding: 64px 0 30px; }
   .story-note { left:-18px; }
   .services { grid-template-columns:repeat(2,1fr); }
   .transactions-grid { grid-template-columns:1fr; }
+  .transaction-card, .transaction-card:nth-child(-n+3) { grid-column:auto; }
   .transaction-card, .transaction-card img { min-height:0; }
+  .lifestyle-grid { grid-template-columns:1fr; }
+  .lifestyle-card, .lifestyle-card img { min-height:560px; }
   .editorial-grid { grid-template-columns:1fr; }
   .editorial-large img { height:560px; }
   .editorial-small img { height:420px; }
@@ -420,6 +508,7 @@ footer { background: #0d0d0c; color: #fff; padding: 64px 0 30px; }
   .transactions-foot { flex-direction:column; align-items:flex-start; }
   .editorial-large img { height:480px; }
   .editorial-small img { height:340px; }
+  .lifestyle-card, .lifestyle-card img { min-height:470px; }
   .contact-link { grid-template-columns:40px 1fr auto; }
 }
 .mobile-lang { display:none; }
