@@ -32,7 +32,7 @@
     head.className='header';
     head.innerHTML=
       '<div class="shell navwrap">'+
-        '<a class="brand" href="'+m.home+'">SUZANA SAMPEUR<small>'+
+        '<a class="brand" href="'+m.home+'">Suzana Sampeur<small>'+
           (lang==='fr'?'Immobilier en Floride du Sud':lang==='ht'?'Imobilye nan Sid Florid':'South Florida Real Estate')+
         '</small></a>'+
         '<nav class="nav" aria-label="'+(lang==='fr'?'Navigation principale':lang==='ht'?'Navigasyon prensipal':'Primary navigation')+'">'+
@@ -46,12 +46,17 @@
             '<a href="'+pathFor('ht',key)+'"'+(lang==='ht'?' aria-current="page"':'')+'>KREYÒL</a>'+
           '</div>'+
         '</nav>'+
-        '<div class="langs">'+
-          '<a href="'+pathFor('en',key)+'"'+(lang==='en'?' aria-current="page"':'')+'>EN</a>'+
-          '<a href="'+pathFor('fr',key)+'"'+(lang==='fr'?' aria-current="page"':'')+'>FR</a>'+
-          '<a href="'+pathFor('ht',key)+'"'+(lang==='ht'?' aria-current="page"':'')+'>KREYÒL</a>'+
+        '<div class="header-actions">'+
+          '<a class="header-search" href="'+m.properties+'" aria-label="'+(lang==='fr'?'Rechercher des propriétés':lang==='ht'?'Chèche pwopriyete':'Search properties')+'">'+
+            '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.75"></circle><path d="M16 16l4.2 4.2"></path></svg>'+
+          '</a>'+
+          '<div class="langs">'+
+            '<a href="'+pathFor('en',key)+'"'+(lang==='en'?' aria-current="page"':'')+'>EN</a>'+
+            '<a href="'+pathFor('fr',key)+'"'+(lang==='fr'?' aria-current="page"':'')+'>FR</a>'+
+            '<a href="'+pathFor('ht',key)+'"'+(lang==='ht'?' aria-current="page"':'')+'>KREYÒL</a>'+
+          '</div>'+
+          '<button class="menu" aria-label="'+(lang==='ht'?'Meni':'Menu')+'" aria-expanded="false"><span></span></button>'+
         '</div>'+
-        '<button class="menu" aria-label="'+(lang==='ht'?'Meni':'Menu')+'" aria-expanded="false"><span></span></button>'+
       '</div>';
 
     const b=head.querySelector('.menu');
