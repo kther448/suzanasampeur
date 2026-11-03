@@ -401,3 +401,8 @@ footer{background:#000;color:#fff}
   .header-search{width:32px;height:32px}
   .menu{width:32px;height:32px}
 }
+
+/* Featured Areas: keep long area names readable and make the area guide link a full row. */
+.area-index .area-link{flex-wrap:wrap;gap:10px 20px}
+.area-index .area-guide-link{grid-column:1 / -1}
+@media(max-width:650px){.area-index .area-guide-link{grid-column:auto}}
