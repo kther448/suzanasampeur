@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /suzana-sampeur-website.html
+Sitemap: https://sampeurrealty.com/sitemap.xml
