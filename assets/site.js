@@ -4,15 +4,15 @@
   const current=p.split('/').pop()||'index.html';
 
   const maps={
-    en:{home:'index.html',properties:'properties.html',areas:'areas.html',buyers:'buyers.html',sellers:'sellers.html',results:'results.html',about:'about.html',contact:'contact.html',brief:'private-brief.html'},
-    fr:{home:'index.html',properties:'proprietes.html',areas:'quartiers.html',buyers:'acheteurs.html',sellers:'vendeurs.html',results:'resultats.html',about:'a-propos.html',contact:'contact.html',brief:'projet-prive.html'},
-    ht:{home:'index.html',properties:'pwopriyete.html',areas:'zon.html',buyers:'achte.html',sellers:'vann.html',results:'rezilta.html',about:'sou-suzana.html',contact:'kontak.html',brief:'plan-prive.html'}
+    en:{home:'index.html',properties:'properties.html',areas:'areas.html',buyers:'buyers.html',sellers:'sellers.html',results:'results.html',about:'about.html',contact:'contact.html',brief:'private-brief.html',book:'consultation.html'},
+    fr:{home:'index.html',properties:'proprietes.html',areas:'quartiers.html',buyers:'acheteurs.html',sellers:'vendeurs.html',results:'resultats.html',about:'a-propos.html',contact:'contact.html',brief:'projet-prive.html',book:'consultation.html'},
+    ht:{home:'index.html',properties:'pwopriyete.html',areas:'zon.html',buyers:'achte.html',sellers:'vann.html',results:'rezilta.html',about:'sou-suzana.html',contact:'kontak.html',brief:'plan-prive.html',book:'randevou.html'}
   };
 
   const labels={
-    en:{home:'Home',properties:'Properties',areas:'Areas',buyers:'Buy',sellers:'Sell',results:'Results',about:'About',contact:'Contact',brief:'Start your brief'},
-    fr:{home:'Accueil',properties:'Propriétés',areas:'Quartiers',buyers:'Acheter',sellers:'Vendre',results:'Résultats',about:'À propos',contact:'Contact',brief:'Votre projet'},
-    ht:{home:'Akèy',properties:'Pwopriyete',areas:'Zòn',buyers:'Achte',sellers:'Vann',results:'Rezilta',about:'Sou Suzana',contact:'Kontak',brief:'Pwojè ou'}
+    en:{home:'Home',properties:'Properties',areas:'Areas',buyers:'Buy',sellers:'Sell',results:'Results',about:'About',contact:'Contact',brief:'Start your brief',book:'Book a Consultation',bookShort:'Book'},
+    fr:{home:'Accueil',properties:'Propriétés',areas:'Quartiers',buyers:'Acheter',sellers:'Vendre',results:'Résultats',about:'À propos',contact:'Contact',brief:'Votre projet',book:'Réserver une consultation',bookShort:'RDV'},
+    ht:{home:'Akèy',properties:'Pwopriyete',areas:'Zòn',buyers:'Achte',sellers:'Vann',results:'Rezilta',about:'Sou Suzana',contact:'Kontak',brief:'Pwojè ou',book:'Pran yon randevou',bookShort:'Randevou'}
   };
 
   const m=maps[lang], l=labels[lang];
@@ -33,13 +33,13 @@
     head.innerHTML=
       '<div class="shell navwrap">'+
         '<a class="brand" href="'+m.home+'">Suzana Sampeur<small>'+
-          (lang==='fr'?'Immobilier en Floride du Sud':lang==='ht'?'Imobilye nan Sid Florid':'South Florida Real Estate')+
+          'Service. Refined.'+
         '</small></a>'+
         '<nav class="nav" aria-label="'+(lang==='fr'?'Navigation principale':lang==='ht'?'Navigasyon prensipal':'Primary navigation')+'">'+
           ['home','properties','areas','buyers','sellers','results','about','contact'].map(k=>
             '<a href="'+m[k]+'"'+(k===key?' aria-current="page"':'')+'>'+l[k]+'</a>'
           ).join('')+
-          '<a class="nav-cta" href="'+m.brief+'">'+l.brief+'</a>'+
+          '<a class="nav-cta" href="'+m.book+'">'+l.book+'</a>'+
           '<div class="mobile-lang-switch">'+
             '<a href="'+pathFor('en',key)+'"'+(lang==='en'?' aria-current="page"':'')+'>EN</a>'+
             '<a href="'+pathFor('fr',key)+'"'+(lang==='fr'?' aria-current="page"':'')+'>FR</a>'+
@@ -47,6 +47,7 @@
           '</div>'+
         '</nav>'+
         '<div class="header-actions">'+
+          '<a class="header-book" href="'+m.book+'">'+l.bookShort+'</a>'+
           '<a class="header-search" href="'+m.properties+'" aria-label="'+(lang==='fr'?'Rechercher des propriétés':lang==='ht'?'Chèche pwopriyete':'Search properties')+'">'+
             '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.75"></circle><path d="M16 16l4.2 4.2"></path></svg>'+
           '</a>'+
