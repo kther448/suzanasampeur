@@ -452,3 +452,16 @@ footer{background:#000;color:#fff}
 .verified-sale-info .text-link{margin-top:auto;padding-top:15px}
 .tx-links-label{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:16px 0}
 @media(max-width:850px){.verified-sale{grid-template-columns:1fr}.verified-sale-image,.verified-sale-image img{height:auto;min-height:0;aspect-ratio:3/2}.verified-sale-info{padding:28px}}
+
+
+/* Official Sampeur Realty logo: restrained, responsive identity on dark surfaces. */
+.header .brand{display:inline-flex;align-items:center;gap:10px;min-width:0;height:100%;white-space:nowrap;text-decoration:none}
+.header .brand-logo{display:block;width:auto;height:43px;max-width:none;object-fit:contain;flex:none}
+.header .brand-copy{display:flex;flex-direction:column;justify-content:center;font-family:var(--sans);font-size:.88rem;font-weight:600;line-height:1.16;letter-spacing:-.015em}
+.header .brand-copy small{display:block;font-size:.52rem;line-height:1.25;font-weight:400;letter-spacing:.065em;text-transform:none;color:#b8b8bf;margin-top:3px}
+footer .footer-name{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+footer .footer-logo{display:block;width:170px;height:auto;max-width:100%;object-fit:contain}
+footer .footer-owner{display:block;font:500 1.04rem/1.3 var(--sans);letter-spacing:0}
+footer .footer-name small{margin-top:0}
+@media(max-width:1050px){.header .brand-logo{height:40px}.header .brand-copy{font-size:.82rem}}
+@media(max-width:650px){.header .brand-logo{height:42px}.header .brand-copy{display:none}.header .brand{gap:0}footer .footer-logo{width:144px}}

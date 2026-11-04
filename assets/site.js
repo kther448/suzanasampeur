@@ -2,6 +2,7 @@
   const p=location.pathname;
   const lang=p.includes('/fr/')?'fr':p.includes('/ht/')?'ht':'en';
   const current=p.split('/').pop()||'index.html';
+  const logoSrc=(lang==='en'?'assets/':'../assets/')+'images/sampeur-realty-logo.png';
 
   const maps={
     en:{home:'index.html',properties:'properties.html',areas:'areas.html',buyers:'buyers.html',sellers:'sellers.html',results:'results.html',about:'about.html',contact:'contact.html',brief:'private-brief.html',book:'consultation.html'},
@@ -32,9 +33,9 @@
     head.className='header';
     head.innerHTML=
       '<div class="shell navwrap">'+
-        '<a class="brand" href="'+m.home+'">Suzana Sampeur<small>'+
-          'Service. Refined.'+
-        '</small></a>'+
+        '<a class="brand" href="'+m.home+'" aria-label="Sampeur Realty - '+l.home+'">'+
+          '<img class="brand-logo" src="'+logoSrc+'" width="420" height="291" alt="Sampeur Realty">'+
+          '<span class="brand-copy">Suzana Sampeur<small>Service. Refined.</small></span></a>'+
         '<nav class="nav" aria-label="'+(lang==='fr'?'Navigation principale':lang==='ht'?'Navigasyon prensipal':'Primary navigation')+'">'+
           ['home','properties','areas','buyers','sellers','results','about','contact'].map(k=>
             '<a href="'+m[k]+'"'+(k===key?' aria-current="page"':'')+'>'+l[k]+'</a>'
@@ -68,6 +69,24 @@
       b.setAttribute('aria-expanded',String(open));
     });
   }
+
+
+  // Keep the official mark on every footer without changing brokerage disclosures.
+  document.querySelectorAll('footer .footer-name').forEach(el=>{
+    if(el.querySelector('.footer-logo')) return;
+    const disclosure=el.querySelector('small');
+    const logo=document.createElement('img');
+    logo.className='footer-logo';
+    logo.src=logoSrc;
+    logo.alt='Sampeur Realty';
+    logo.width=420;
+    logo.height=291;
+    const owner=document.createElement('span');
+    owner.className='footer-owner';
+    owner.textContent='Suzana Sampeur';
+    el.replaceChildren(logo,owner);
+    if(disclosure) el.appendChild(disclosure);
+  });
 
   document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());
 
