@@ -87,6 +87,20 @@
     if(disclosure) el.appendChild(disclosure);
   });
 
+  // Official Instagram profile in the shared footer, across all three languages.
+  document.querySelectorAll('footer').forEach(footer=>{
+    if(footer.querySelector('.sampeur-instagram-link')) return;
+    const bottom=footer.querySelector('.footer-bottom');
+    const container=footer.querySelector('.shell')||footer;
+    const social=document.createElement('div');
+    social.className='sampeur-instagram';
+    social.innerHTML='<a class="sampeur-instagram-link" href="https://www.instagram.com/IAMSUZANASAMPEUR_/" target="_blank" rel="noopener noreferrer" aria-label="Suzana Sampeur on Instagram (@iamsuzanasampeur_)">'+
+      '<svg viewBox="0 0 24 24" width="23" height="23" aria-hidden="true" focusable="false"><defs><linearGradient id="ig-sampeur-icon" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FEDA75"/><stop offset="40%" stop-color="#FA7E1E"/><stop offset="70%" stop-color="#D62976"/><stop offset="100%" stop-color="#4F5BD5"/></linearGradient></defs><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="url(#ig-sampeur-icon)" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="url(#ig-sampeur-icon)" stroke-width="2"/><circle cx="17.55" cy="6.45" r="1.25" fill="#D62976"/></svg>'+
+      '<span>@iamsuzanasampeur_</span></a>';
+    if(bottom) bottom.insertAdjacentElement('afterend',social);
+    else container.appendChild(social);
+  });
+
   document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());
 
   const form=document.querySelector('[data-client-brief]');
