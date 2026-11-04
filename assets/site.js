@@ -34,8 +34,7 @@
     head.innerHTML=
       '<div class="shell navwrap">'+
         '<a class="brand" href="'+m.home+'" aria-label="Sampeur Realty - '+l.home+'">'+
-          '<img class="brand-logo" src="'+logoSrc+'" width="420" height="291" alt="Sampeur Realty">'+
-          '<span class="brand-copy">Suzana Sampeur<small>Service. Refined.</small></span></a>'+
+          '<img class="brand-logo" src="'+logoSrc+'" width="420" height="291" alt="Sampeur Realty"></a>'+
         '<nav class="nav" aria-label="'+(lang==='fr'?'Navigation principale':lang==='ht'?'Navigasyon prensipal':'Primary navigation')+'">'+
           ['home','properties','areas','buyers','sellers','results','about','contact'].map(k=>
             '<a href="'+m[k]+'"'+(k===key?' aria-current="page"':'')+'>'+l[k]+'</a>'
