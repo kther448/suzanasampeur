@@ -101,6 +101,25 @@
     else container.appendChild(social);
   });
 
+
+  // Official Sampeur Realty contact address in every page footer.
+  document.querySelectorAll('footer').forEach(footer=>{
+    if(footer.querySelector('.sampeur-footer-email')) return;
+    const item=document.createElement('div');
+    item.className='sampeur-footer-email';
+    const link=document.createElement('a');
+    link.className='sampeur-footer-email-link';
+    link.href='mailto:info@sampeurrealty.com';
+    link.setAttribute('aria-label','Email Sampeur Realty at info@sampeurrealty.com');
+    link.innerHTML='<svg viewBox="0 0 24 24" width="23" height="23" aria-hidden="true" focusable="false"><rect x="2.5" y="5" width="19" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m3.8 6.5 8.2 6.3 8.2-6.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>info@sampeurrealty.com</span>';
+    item.appendChild(link);
+    const instagram=footer.querySelector('.sampeur-instagram');
+    const bottom=footer.querySelector('.footer-bottom');
+    if(instagram) instagram.insertAdjacentElement('beforebegin',item);
+    else if(bottom) bottom.insertAdjacentElement('afterend',item);
+    else (footer.querySelector('.shell')||footer).appendChild(item);
+  });
+
   document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());
 
   const form=document.querySelector('[data-client-brief]');
@@ -133,7 +152,7 @@
         copy.timeline+': '+d.get('timeline'),
         copy.notes+': '+d.get('notes')
       ].join('\n'));
-      location.href='mailto:suzana@luxeknows.com?subject='+subject+'&body='+body;
+      location.href='mailto:info@sampeurrealty.com?subject='+subject+'&body='+body;
     });
   }
 })();
