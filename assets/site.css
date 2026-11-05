@@ -485,3 +485,10 @@ footer .footer-name small{margin-top:0}
 .sampeur-footer-email-link:hover,.sampeur-footer-email-link:focus-visible{color:#fff;text-decoration:underline;text-underline-offset:4px}
 .sampeur-footer-email-link:focus-visible{outline:2px solid #fff;outline-offset:5px;border-radius:2px}
 .sampeur-footer-email + .sampeur-instagram{margin-top:12px}
+
+
+/* Swap property 07 and 1620 NE 36th Ave without altering property details. */
+.tx-swapped-featured{border:1px solid var(--line);margin:18px 0 34px}
+.tx-grid>.verified-sale.homestead-1620{grid-column:1 / -1;margin:0;border:0}
+.tx-grid>.verified-sale.homestead-1620 .verified-sale-image{min-height:300px}
+@media(max-width:850px){.tx-grid>.verified-sale.homestead-1620 .verified-sale-image{min-height:0}}
