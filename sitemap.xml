@@ -252,4 +252,25 @@
     <xhtml:link rel="alternate" hreflang="ht" href="https://sampeurrealty.com/ht/lavi-medya.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sampeurrealty.com/life-media.html"/>
   </url>
+  <url>
+    <loc>https://sampeurrealty.com/seller-consultation.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sampeurrealty.com/seller-consultation.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sampeurrealty.com/fr/formulaire-vendeur.html"/>
+    <xhtml:link rel="alternate" hreflang="ht" href="https://sampeurrealty.com/ht/fom-vande.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sampeurrealty.com/seller-consultation.html"/>
+  </url>
+  <url>
+    <loc>https://sampeurrealty.com/fr/formulaire-vendeur.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sampeurrealty.com/seller-consultation.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sampeurrealty.com/fr/formulaire-vendeur.html"/>
+    <xhtml:link rel="alternate" hreflang="ht" href="https://sampeurrealty.com/ht/fom-vande.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sampeurrealty.com/seller-consultation.html"/>
+  </url>
+  <url>
+    <loc>https://sampeurrealty.com/ht/fom-vande.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sampeurrealty.com/seller-consultation.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sampeurrealty.com/fr/formulaire-vendeur.html"/>
+    <xhtml:link rel="alternate" hreflang="ht" href="https://sampeurrealty.com/ht/fom-vande.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sampeurrealty.com/seller-consultation.html"/>
+  </url>
 </urlset>

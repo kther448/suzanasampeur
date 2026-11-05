@@ -492,3 +492,20 @@ footer .footer-name small{margin-top:0}
 .tx-grid>.verified-sale.homestead-1620{grid-column:1 / -1;margin:0;border:0}
 .tx-grid>.verified-sale.homestead-1620 .verified-sale-image{min-height:300px}
 @media(max-width:850px){.tx-grid>.verified-sale.homestead-1620 .verified-sale-image{min-height:0}}
+
+/* Seller consultation: Zoho embed and restrained Sampeur Realty styling. */
+.seller-form-hero{background:#f5f5f7;border-bottom:1px solid #d2d2d7;padding:72px 0 58px}
+.seller-form-hero-grid{display:grid;grid-template-columns:1fr .85fr;gap:56px;align-items:end}
+.seller-form-hero h1{font:650 clamp(2.65rem,5vw,5.15rem)/1.02 var(--display);letter-spacing:-.045em;margin:16px 0 0}
+.seller-form-hero p{color:#55555b;font-size:1.07rem;max-width:53ch;margin:0;line-height:1.65}
+.seller-form-section{background:#fff;padding:52px 0 84px}
+.seller-form-shell{max-width:960px}
+.seller-form-meta{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid #d2d2d7;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6e6e73}
+.zoho-seller-embed{width:100%;scroll-margin-top:120px;min-height:360px}
+.zoho-seller-embed iframe{width:100%;max-width:100%;border:0;display:block}
+.seller-form-help,.seller-form-note{font-size:.84rem;line-height:1.6;color:#6e6e73}
+.seller-form-help{margin:22px 0 8px}
+.seller-form-help a,.seller-form-note a{color:#1d1d1f;text-decoration:underline;text-underline-offset:4px}
+.seller-form-note{margin:0}
+@media(max-width:850px){.seller-form-hero{padding:48px 0 40px}.seller-form-hero-grid{grid-template-columns:1fr;gap:16px}.seller-form-section{padding:25px 0 60px}}
+@media(max-width:650px){.seller-form-hero h1{font-size:clamp(2.4rem,10vw,3.4rem)}.seller-form-hero p{font-size:.98rem}.seller-form-meta{font-size:.62rem}.zoho-seller-embed{scroll-margin-top:95px}}
