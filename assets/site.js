@@ -5,9 +5,9 @@
   const logoSrc=(lang==='en'?'assets/':'../assets/')+'images/sampeur-realty-logo.png';
 
   const maps={
-    en:{home:'index.html',properties:'properties.html',areas:'areas.html',buyers:'buyers.html',sellers:'sellers.html',results:'results.html',about:'about.html',contact:'contact.html',brief:'private-brief.html',book:'consultation.html',sellerForm:'seller-consultation.html'},
-    fr:{home:'index.html',properties:'proprietes.html',areas:'quartiers.html',buyers:'acheteurs.html',sellers:'vendeurs.html',results:'resultats.html',about:'a-propos.html',contact:'contact.html',brief:'projet-prive.html',book:'consultation.html',sellerForm:'formulaire-vendeur.html'},
-    ht:{home:'index.html',properties:'pwopriyete.html',areas:'zon.html',buyers:'achte.html',sellers:'vann.html',results:'rezilta.html',about:'sou-suzana.html',contact:'kontak.html',brief:'plan-prive.html',book:'randevou.html',sellerForm:'fom-vande.html'}
+    en:{home:'index.html',properties:'properties.html',areas:'areas.html',buyers:'buyers.html',sellers:'sellers.html',results:'results.html',about:'about.html',contact:'contact.html',brief:'private-brief.html',book:'consultation.html',sellerForm:'seller-consultation.html',buyerRenterForm:'buyer-renter-consultation.html'},
+    fr:{home:'index.html',properties:'proprietes.html',areas:'quartiers.html',buyers:'acheteurs.html',sellers:'vendeurs.html',results:'resultats.html',about:'a-propos.html',contact:'contact.html',brief:'projet-prive.html',book:'consultation.html',sellerForm:'formulaire-vendeur.html',buyerRenterForm:'formulaire-acheteur-locataire.html'},
+    ht:{home:'index.html',properties:'pwopriyete.html',areas:'zon.html',buyers:'achte.html',sellers:'vann.html',results:'rezilta.html',about:'sou-suzana.html',contact:'kontak.html',brief:'plan-prive.html',book:'randevou.html',sellerForm:'fom-vande.html',buyerRenterForm:'fom-achte-lwe.html'}
   };
 
   const labels={

@@ -509,3 +509,12 @@ footer .footer-name small{margin-top:0}
 .seller-form-note{margin:0}
 @media(max-width:850px){.seller-form-hero{padding:48px 0 40px}.seller-form-hero-grid{grid-template-columns:1fr;gap:16px}.seller-form-section{padding:25px 0 60px}}
 @media(max-width:650px){.seller-form-hero h1{font-size:clamp(2.4rem,10vw,3.4rem)}.seller-form-hero p{font-size:.98rem}.seller-form-meta{font-size:.62rem}.zoho-seller-embed{scroll-margin-top:95px}}
+
+/* Buyer and renter consultation: three balanced options and responsive Zoho embed. */
+.consult-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.consult-card{min-width:0}
+.consult-card h2{font-size:clamp(1.55rem,2.4vw,2.2rem)}
+.zoho-buyer-renter-embed{width:100%;scroll-margin-top:120px;min-height:360px}
+.zoho-buyer-renter-embed iframe{width:100%;max-width:100%;border:0;display:block}
+@media(max-width:900px){.consult-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.consult-grid{grid-template-columns:minmax(0,1fr)}.zoho-buyer-renter-embed{scroll-margin-top:95px}}
